@@ -1,10 +1,5 @@
 # Algoritmo del Banquero
 
-    # Author: Franco Ivan Hilt
-    # Version: Python 3.9.6
-    # Date: 03/07/2021
-
-    # Implementar el algoritmo del banquero 
     # (Algoritmo para evitar el abrazo mortal)
 
     # La entrada del proceso son las estructuras de datos necesarias para
@@ -12,3 +7,8 @@
     # esta en estado seguro.
 
     # La salida es mostrar un camino seguro como minimo.
+    
+    # Author: Franco Ivan Hilt
+    # Version: Python 3.9.6
+    # Date: 03/07/2021
+
