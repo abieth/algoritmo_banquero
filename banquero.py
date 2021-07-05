@@ -25,24 +25,22 @@ def comprobar(asignados, maximos, disponibles):
     else:
         print('\nSe produjo un interbloqueo')
 
-# Sumamos el arreglo de disponibles con los que tenia asignados.
 def liberar_recursos(asignados, disponibles):
     for i in range(len(disponibles)):
-        disponibles[i] += asignados[i]
+        disponibles[i] += asignados[i] # Sumo los disponibles con los que tenia asignados.
     print('Recursos liberados --> Disponibles:',disponibles)
 
-# Devuelve True si la cantidad de elementos asignados mas los disponibles son 
-# mayores o iguales a los requeridos para continuar. Existencia = Disponibles + Asignados
 def puede_ejecutar(asignados, disponibles, maximos):
     print('Asignados:',asignados, 'Diponibles:',disponibles, 'Maximos:',maximos)
     resultado = True
     for i in range(len(maximos)):
-        
         if(asignados[i] + disponibles[i] < maximos[i]):
             resultado = False # No puede sastifacer con esa Disponibilidad ninguna Necesidad.
             break # El proceso queda bloqueado esperando.
     print('Resultado: ',resultado)
     return resultado
+# Devuelve True si la cantidad de elementos asignados mas los disponibles son 
+# mayores o iguales a los requeridos para continuar. Existencia = Disponibles + Asignados.
 
 #---------------------------------------------------------------------------------------#
 
