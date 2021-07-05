@@ -1,8 +1,4 @@
 #---------------------------------------------------------------------------------------#
-    # Author: Franco Ivan Hilt
-    # Version: Python 3.9.6
-    # Date: 03/07/2021
-
     # Implementar el algoritmo del banquero 
     # (Algoritmo para evitar el abrazo mortal)
 
@@ -17,7 +13,7 @@ def comprobar(asignados, maximos, disponibles):
     finalizados = []
     i = 0
     while(i < len(asignados)):
-        if not i in finalizados and puede_continuar(asignados[i], disponibles, maximos[i]):
+        if not i in finalizados and puede_ejecutar(asignados[i], disponibles, maximos[i]):
             print('Finaliza P%s\nDisponibles: %s' % (i,disponibles))
             liberar_recursos(asignados[i], disponibles)
             finalizados.append(i) # Marca el proceso Pi como finalizado.
@@ -37,14 +33,14 @@ def liberar_recursos(asignados, disponibles):
 
 # Devuelve True si la cantidad de elementos asignados mas los disponibles son 
 # mayores o iguales a los requeridos para continuar. Existencia = Disponibles + Asignados
-def puede_continuar(asignados, disponibles, maximos):
+def puede_ejecutar(asignados, disponibles, maximos):
     print('Asignados:',asignados, 'Diponibles:',disponibles, 'Maximos:',maximos)
     resultado = True
     for i in range(len(maximos)):
         
         if(asignados[i] + disponibles[i] < maximos[i]):
-            resultado = False
-            break
+            resultado = False # No puede sastifacer con esa Disponibilidad ninguna Necesidad.
+            break # El proceso queda bloqueado esperando.
     print('Resultado: ',resultado)
     return resultado
 
