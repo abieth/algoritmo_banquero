@@ -1,5 +1,5 @@
 #---------------------------------------------------------------------------------------#
-    # Implementar el algoritmo del banquero 
+    # Implementación el algoritmo del banquero 
     # (Algoritmo para evitar el abrazo mortal)
 
     # La entrada del proceso son las estructuras de datos necesarias para
@@ -8,6 +8,7 @@
 
     # La salida es mostrar un camino seguro como minimo.
 #---------------------------------------------------------------------------------------#
+print("\n#-------------------Algoritmo del banquero-------------------#\n")
 
 def comprobar(asignados, maximos, disponibles):
     finalizados = []
@@ -21,9 +22,9 @@ def comprobar(asignados, maximos, disponibles):
         else:
             i += 1
     if(len(asignados) == len(finalizados)): # Si todos los procesos finalizan.
-        print('\nEstado seguro')
+        print('\n--> Estado seguro <--')
     else:
-        print('\nSe produjo un interbloqueo')
+        print('\n--> Se produjo un interbloqueo <--')
 
 def liberar_recursos(asignados, disponibles):
     for i in range(len(disponibles)):
@@ -40,7 +41,7 @@ def puede_ejecutar(asignados, disponibles, maximos):
     print('Resultado: ',resultado)
     return resultado
 # Devuelve True si la cantidad de elementos asignados mas los disponibles son 
-# mayores o iguales a los requeridos para continuar. Existencia = Disponibles + Asignados.
+# mayores o iguales a los requeridos para ejecutar. Existencia = Disponibles + Asignados.
 
 #---------------------------------------------------------------------------------------#
 
